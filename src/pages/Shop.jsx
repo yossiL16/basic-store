@@ -17,7 +17,7 @@ export default function Shop() {
                 price={item.price}
                 category={item.category}
                 description={item.description}
-                image={image}  />
+                image={item.image}  />
             )
         })}
     

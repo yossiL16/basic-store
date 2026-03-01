@@ -1,0 +1,26 @@
+.crad {
+    height: 350px;
+    width: 200px;
+    background-color: antiquewhite;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.image-item{
+    background-color: beige;
+    height: 60px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.pric-item {
+    display: flex;
+    justify-content: space-between
+}
+
+.data-item {
+    padding: 20px;
+}
