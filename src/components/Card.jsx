@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 export default function Card({id, name, price, category, description, image}) {
-    
+    const [status, setStatuse] = useState(true)
+
+    function hanleButton(){
+        
+    }
+
   return (
     <div className='crad'>
         <div className='image-item'>
@@ -13,10 +19,10 @@ export default function Card({id, name, price, category, description, image}) {
             <p>{description}</p>
             <div className='pric-item'>
                 <span>${price}</span>
-                <span>Not in cart</span>
+                <span>{status ? 'Not in cart' : 'In cart'}</span>
             </div>
             <br />
-            <button>Add to cart</button>
+            <button>{status ? "Add to cart" : "Remove from cart"}</button>
 
         </div>
     </div>
