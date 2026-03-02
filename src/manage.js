@@ -9,8 +9,9 @@ export const useProduct = create((set) => ({
     products: [],
     addProduct: (obj) => set((state) => ({products: [...state.products, obj]})),
     removeProduct: (id) => set((state) => ({products: state.products.filter(p => p.id !== id)})),
+    clearProdact: () => set(() => ({products: []})),
     sumPrice: 0,
     addPrice: (price) => set((state) => ({sumPrice: state.sumPrice + price})),
-    decPrice: (price) => set((state) => ({sumPrice: state.sumPrice - price}))
-
+    decPrice: (price) => set((state) => ({sumPrice: state.sumPrice - price})),
+    clearPrice: () => set(() => ({sumPrice: 0}))
 }))

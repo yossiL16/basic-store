@@ -8,9 +8,18 @@ export default function Cart() {
     const count = useProduct((state) => state.count)
     const products = useProduct((state) => state.products)
     const sumPrice = useProduct((state) => state.sumPrice)
+    const clear = useProduct((state) => state.clear)
+    const clearProdact = useProduct((state) => state.clearProdact)
+    const clearPrice = useProduct((state) => state.clearPrice)
 
         function handleshop(){
         navigate('/')
+    }
+    function handleToRemove(){
+        clear()
+        clearProdact()
+        clearPrice()
+
     }
 
 
@@ -19,6 +28,7 @@ export default function Cart() {
     <div className='cart-page'>
         <button onClick={handleshop}>{sumPrice}</button>
         <p>{count}</p>
+        <button onClick={handleToRemove}>clear</button>
         <div>
             {products.map((item) => {
             return (
