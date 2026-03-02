@@ -23,6 +23,9 @@ export default function Card({id, name, price, category, description, image}) {
             setStatuse(false)
             add()
         }
+        console.log(products);
+        
+        
     }
 
   return (
