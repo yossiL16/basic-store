@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
 import { useProduct } from '../manage';
 
 
 export default function Card({id, name, price, category, description, image}) {
-    // const [status, setStatuse] = useState(true)
     let products = useProduct((state) => state.products)
     const addProduct = useProduct((state) => state.addProduct)
     let removeProduct = useProduct((state) => state.removeProduct)
@@ -17,19 +15,14 @@ export default function Card({id, name, price, category, description, image}) {
     function hanleButton(){
         const item = { id, name, category, price }        
         if(find) {
-            console.log(find);
             removeProduct(id)
             dec()
             decPrice(price)
         } else {
-            console.log(find);
             addProduct(item)
             add()
             addPrice(price)
         }
-        console.log(products);
-
-        
     }
 
   return (
