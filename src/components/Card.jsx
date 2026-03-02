@@ -3,7 +3,7 @@ import { useProduct } from '../manage';
 
 
 export default function Card({id, name, price, category, description, image}) {
-    const [status, setStatuse] = useState(true)
+    // const [status, setStatuse] = useState(true)
     let products = useProduct((state) => state.products)
     const addProduct = useProduct((state) => state.addProduct)
     let removeProduct = useProduct((state) => state.removeProduct)
@@ -12,17 +12,18 @@ export default function Card({id, name, price, category, description, image}) {
     const addPrice = useProduct((state) => state.addPrice)
     const decPrice = useProduct((state) => state.decPrice)
 
+    const find = products.some((i) => id === i.id)
+
     function hanleButton(){
         const item = { id, name, category, price }        
-
-        if(!status) {
+        if(find) {
+            console.log(find);
             removeProduct(id)
-            setStatuse(true) 
             dec()
             decPrice(price)
         } else {
+            console.log(find);
             addProduct(item)
-            setStatuse(false)
             add()
             addPrice(price)
         }
@@ -42,10 +43,10 @@ export default function Card({id, name, price, category, description, image}) {
             <p>{description}</p>
             <div className='pric-item'>
                 <span>${price}</span>
-                <span>{status ? 'Not in cart' : 'In cart'}</span>
+                <span>{find ? 'In cart' : 'Not in cart'}</span>
             </div>
             <br />
-            <button onClick={hanleButton}>{status ? "Add to cart" : "Remove from cart"}</button>
+            <button onClick={hanleButton}>{find ? "Remove from cart" : "Add to cart" }</button>
 
         </div>
     </div>
