@@ -4,12 +4,13 @@ import { useProduct } from '../manage';
 
 export default function Card({id, name, price, category, description, image}) {
     const [status, setStatuse] = useState(true)
-    const count = useProduct((state) => state.count)
     let products = useProduct((state) => state.products)
     const addProduct = useProduct((state) => state.addProduct)
     let removeProduct = useProduct((state) => state.removeProduct)
     const add = useProduct((state) => state.add)
     const dec = useProduct((state) => state.dec)
+    const addPrice = useProduct((state) => state.addPrice)
+    const decPrice = useProduct((state) => state.decPrice)
 
     function hanleButton(){
         const item = { id, name, category, price }        
@@ -18,13 +19,15 @@ export default function Card({id, name, price, category, description, image}) {
             removeProduct(id)
             setStatuse(true) 
             dec()
+            decPrice(price)
         } else {
             addProduct(item)
             setStatuse(false)
             add()
+            addPrice(price)
         }
         console.log(products);
-        
+
         
     }
 
