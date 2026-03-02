@@ -4,26 +4,25 @@ import { useProduct } from '../manage';
 
 export default function Card({id, name, price, category, description, image}) {
     const [status, setStatuse] = useState(true)
+    const count = useProduct((state) => state.count)
     let products = useProduct((state) => state.products)
-    const addPtoduct = useProduct((state) => state.addPtoduct)
-    let remmove = useProduct((state) => state.remmove)
+    const addProduct = useProduct((state) => state.addProduct)
+    let removeProduct = useProduct((state) => state.removeProduct)
+    const add = useProduct((state) => state.add)
+    const dec = useProduct((state) => state.dec)
 
     function hanleButton(){
-        const item = {
-            id,
-            name,
-            category,
-            price
-        }        
-
-        setStatuse(!status)
+        const item = { id, name, category, price }        
 
         if(!status) {
-            () => addPtoduct(item)
+            removeProduct(id)
+            setStatuse(true) 
+            dec()
+        } else {
+            addProduct(item)
+            setStatuse(false)
+            add()
         }
-
-         console.log(status);
-        console.log(products);
     }
 
   return (

@@ -6,7 +6,7 @@ export const useProduct = create((set) => ({
     dec: () => set((state) => ({count: state.count - 1})),
     clear: () => set(() => ({count: 0})),
     products: [],
-    addPtoduct: (obj) => set((state) => ({products: [...state.products, obj]})),
-    remmove: (filterList) => set(() => ({products: filterList})) 
+    addProduct: (obj) => set((state) => ({products: [...state.products, obj]})),
+    removeProduct: (id) => set((state) => ({products: state.products.filter(p => p.id !== id)})) 
 
 }))
