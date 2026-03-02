@@ -1,11 +1,29 @@
 import React, { useState } from 'react'
+import { useProduct } from '../manage';
 
 
 export default function Card({id, name, price, category, description, image}) {
     const [status, setStatuse] = useState(true)
+    let products = useProduct((state) => state.products)
+    const addPtoduct = useProduct((state) => state.addPtoduct)
+    let remmove = useProduct((state) => state.remmove)
 
     function hanleButton(){
-        
+        const item = {
+            id,
+            name,
+            category,
+            price
+        }        
+
+        setStatuse(!status)
+
+        if(!status) {
+            () => addPtoduct(item)
+        }
+
+         console.log(status);
+        console.log(products);
     }
 
   return (
@@ -22,7 +40,7 @@ export default function Card({id, name, price, category, description, image}) {
                 <span>{status ? 'Not in cart' : 'In cart'}</span>
             </div>
             <br />
-            <button>{status ? "Add to cart" : "Remove from cart"}</button>
+            <button onClick={hanleButton}>{status ? "Add to cart" : "Remove from cart"}</button>
 
         </div>
     </div>
