@@ -22,7 +22,7 @@ export default function Cart() {
   return (
     <div className='cart-page'>
         <p>sum price {sumPrice}</p>
-        <p>{count}</p>
+        <p>the count is: {count}</p>
         <button onClick={handleToRemove}>clear</button>
         <div>
             {products.map((item) => {
