@@ -14,7 +14,6 @@ export default function Cart() {
         clear()
         clearProdact()
         clearPrice()
-
     }
 
   return (
