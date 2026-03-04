@@ -1,10 +1,8 @@
 import { useProduct } from '../manage'
-import { useNavigate } from 'react-router-dom'
 import CardCart from '../components/CardCart';
 
 export default function Cart() {
 
-    const navigate = useNavigate();
     const count = useProduct((state) => state.count)
     const products = useProduct((state) => state.products)
     const sumPrice = useProduct((state) => state.sumPrice)
@@ -12,9 +10,6 @@ export default function Cart() {
     const clearProdact = useProduct((state) => state.clearProdact)
     const clearPrice = useProduct((state) => state.clearPrice)
 
-        function handleshop(){
-        navigate('/')
-    }
     function handleToRemove(){
         clear()
         clearProdact()
@@ -26,7 +21,7 @@ export default function Cart() {
 
   return (
     <div className='cart-page'>
-        <button onClick={handleshop}>{sumPrice}</button>
+        <p>sum price {sumPrice}</p>
         <p>{count}</p>
         <button onClick={handleToRemove}>clear</button>
         <div>
