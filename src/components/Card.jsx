@@ -26,7 +26,7 @@ export default function Card({id, name, price, category, description, image}) {
     }
 
   return (
-    <div className='crad'>
+    <div className='card'>
         <div className='image-item'>
             {image}
         </div>

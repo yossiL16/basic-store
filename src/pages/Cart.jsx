@@ -17,13 +17,13 @@ export default function Cart() {
 
     }
 
-
-
   return (
     <div className='cart-page'>
-        <p>sum price {sumPrice}</p>
-        <p>the count is: {count}</p>
-        <button onClick={handleToRemove}>clear</button>
+        <div className='cart-summary'>
+        <p>Total Price <strong>{sumPrice}</strong></p>
+        <p>Item in cart: {count}</p>
+        <button onClick={handleToRemove} style={{background: 'red', color: 'white'}}>clear</button>
+        </div>
         <div>
             {products.map((item) => {
             return (
@@ -37,8 +37,6 @@ export default function Cart() {
         })}
     
         </div>
-
-
     </div>
   )
 }

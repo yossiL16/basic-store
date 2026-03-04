@@ -5,7 +5,7 @@ import data from '../../public/data.json'
 export default function Shop() {
   
   return (
-    <div>
+    <div className='shop-container'>
         {data.map((item) => {
             return (
                 <Card 
