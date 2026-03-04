@@ -25,8 +25,8 @@ export default function NavBar() {
     
     <div className='nav-bar'>
         <nav>
-          <button className='navigate' style={statusShop ? {background:"black", color: "white"} : {background:"white", color:"black"}} onClick={handleCart}>Cart <span>{count}</span></button>
-          <button className='navigate' style={statusCart ? {background:"black", color: "white"} : {background:"white", color:"black"}} onClick={handleshop}>Shop</button>
+          <button className='navigate' style={!statusShop ? {background:"black", color: "#f4f1f1"} : {background:"#f4f1f1", color:"black"}} onClick={handleCart}>Cart <span>{count}</span></button>
+          <button className='navigate' style={!statusCart ? {background:"black", color: "#f4f1f1"} : {background:"#f4f1f1", color:"black"}} onClick={handleshop}>Shop</button>
 
         </nav>
     </div>
