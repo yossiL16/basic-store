@@ -1,3 +1,10 @@
+.nav-bar {
+    background: #99d10c;
+    height: 5em;
+    width: 90vw;
+    
+}
+
 .crad {
     height: 370px;
     width: 220px;
@@ -27,9 +34,18 @@
 
 .card-cart {
     background-color: bisque;
+    border-radius: 10px;
+    
+}
+
+.cart-page {
+    height: 100vh;
 }
 
 #root {
     background: radial-gradient(circle at top right, rgba(245, 196, 110, .45), transparent 28%), radial-gradient(circle at bottom left, rgba(87, 150, 255, .3), transparent 32%), #f7f5ef;
     font-family: Trebuchet MS, Segoe UI, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
