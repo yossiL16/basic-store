@@ -1,6 +1,5 @@
 import { useProduct } from '../manage';
 
-
 export default function Card({id, name, price, category, description, image}) {
     let products = useProduct((state) => state.products)
     const addProduct = useProduct((state) => state.addProduct)
@@ -40,7 +39,6 @@ export default function Card({id, name, price, category, description, image}) {
             </div>
             <br />
             <button onClick={hanleButton}>{find ? "Remove from cart" : "Add to cart" }</button>
-
         </div>
     </div>
   )
